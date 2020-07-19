@@ -13,6 +13,7 @@ public class Main {
         }*/
        Runner runner1 = new Runner();
        runner1.setName("Runner 1");
+       runner1.setStarted(true);
 
         Runner runner2 = new Runner();
         runner2.setName("Runner 2");
