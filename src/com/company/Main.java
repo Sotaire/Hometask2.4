@@ -1,17 +1,36 @@
 package com.company;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.ArrayList;
 
 public class Main {
 
+    static ArrayList <Runner> runners = new ArrayList<>();
+
     public static void main(String[] args) {
-       /* for (int i = 1; i < 6 ; i++) {
+
+        for (int i = 1; i <= 5 ; i++) {
             Runner runner = new Runner();
             runner.setName("Runner " + i);
-            runner.start();
-        }*/
-       Runner runner1 = new Runner();
+            runners.add(runner);
+        }
+
+        runners.get(0).setStarted(true);
+
+        for (int i = 0; i <= 3 ; i++) {
+            runners.get(i).setName1(runners.get(i + 1));
+        }
+
+        runners.get(4).setName1(runners.get(3));
+
+        for (int i = 3; i > 0 ; i--) {
+            runners.get(i).setName2(runners.get(i - 1));
+        }
+
+        for (int i = 0; i < 5; i++) {
+            runners.get(i).start();
+        }
+
+       /*Runner runner1 = new Runner();
        runner1.setName("Runner 1");
        runner1.setStarted(true);
 
@@ -37,11 +56,11 @@ public class Main {
         runner3.setName2(runner2);
         runner2.setName2(runner1);
 
-       runner1.start();
+      runner1.start();
        runner2.start();
        runner3.start();
        runner4.start();
-       runner5.start();
+       runner5.start();*/
 
     }
 }
