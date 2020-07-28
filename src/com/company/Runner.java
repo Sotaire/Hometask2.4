@@ -18,6 +18,10 @@ public class Runner extends Thread {
         isStarted = started;
     }
 
+    public Boolean getStarted() {
+        return isStarted;
+    }
+
     public void run() {
         if(isStarted == true ){
             name1.setStarted(true);             // для последовательности, мы через поле isStarted позволяем бежать только тому Раннеру,

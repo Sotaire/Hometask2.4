@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Main {
 
-    static ArrayList <Runner> runners = new ArrayList<>();
+    static ArrayList <Runner> runners = new ArrayList<>();    // оптимизированный код
 
     public static void main(String[] args) {
 
@@ -25,9 +25,15 @@ public class Main {
         for (int i = 3; i > 0 ; i--) {
             runners.get(i).setName2(runners.get(i - 1));
         }
+        runners.get(3).setStarted(false);
 
         for (int i = 0; i < 5; i++) {
             runners.get(i).start();
+            try {
+                Thread.currentThread().sleep(4000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
 
        /*Runner runner1 = new Runner();
